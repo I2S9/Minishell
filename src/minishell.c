@@ -1,18 +1,19 @@
 #include "../includes/minishell.h"
 
-int main() 
-{
+int main() {
     char ligne[TAILLE_LIGNE];
     char *arguments[TAILLE_MAX_ARGS];
     pid_t pid;
+    int i;
+    char *jeton;
+    int arriere_plan;
 
     afficher_ascii_art();
 
-    while (1) 
-    {
+    while (1) {
         afficher_prompt();
 
-        // Lire la commande
+        /* Lire la commande */
         if (fgets(ligne, sizeof(ligne), stdin) == NULL) 
         {
             printf("\n");
@@ -26,15 +27,14 @@ int main()
             continue;
         }
 
-        // Vérification variable 
         if (gerer_variable(ligne)) 
         {
             continue;
         }
 
-        // Séparer les arguments
-        int i = 0;
-        char *jeton = strtok(ligne, " ");
+        /* Séparer les arguments */
+        i = 0;
+        jeton = strtok(ligne, " ");
         while (jeton != NULL && i < TAILLE_MAX_ARGS - 1) 
         {
             arguments[i++] = jeton;
@@ -47,15 +47,14 @@ int main()
             continue;
         }
 
-        // Commande interne
+        /* Commande interne */
         if (est_builtin(arguments[0])) 
         {
             executer_builtin(arguments);
             continue;
         }
 
-        // Détection du mode arrière-plan avec '&'
-        int arriere_plan = 0;
+        arriere_plan = 0;
         if (i > 0 && strcmp(arguments[i - 1], "&") == 0) 
         {
             arriere_plan = 1;
@@ -65,7 +64,7 @@ int main()
         pid = fork();
         if (pid == 0) 
         {
-            // Processus enfant
+            /* Processus enfant */
             if (execvp(arguments[0], arguments) == -1) 
             {
                 erreur("Commande introuvable");
@@ -78,7 +77,6 @@ int main()
         } 
         else 
         {
-            // Processus parent
             if (!arriere_plan) 
             {
                 waitpid(pid, NULL, 0);

@@ -9,7 +9,7 @@
 #include <string.h>
 #include <unistd.h>
 
-// Déclarations des fonctions
+/* Déclarations des fonctions */ 
 void nettoyer_ligne(char *ligne);
 void afficher_ascii_art();
 void afficher_prompt();

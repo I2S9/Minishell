@@ -1,7 +1,7 @@
 #include "../includes/minishell.h"
 #include <string.h>
 
-// Vérifie si la commande est un builtin
+/* Verifie si la commande est un builtin */
 int est_builtin(char *commande) 
 {
     return (strcmp(commande, "cd") == 0 ||
@@ -10,7 +10,7 @@ int est_builtin(char *commande)
             strcmp(commande, "exit") == 0);
 }
 
-// Exécute la commande builtin correspondante
+/* Execute la commande builtin correspondante */
 int executer_builtin(char **arguments) 
 {
     if (strcmp(arguments[0], "cd") == 0) 
@@ -32,7 +32,7 @@ int executer_builtin(char **arguments)
     return 0;
 }
 
-// Change le répertoire courant
+/* Change le repertoire courant */
 int cmd_cd(char **args) 
 {
     if (args[1] == NULL) 
@@ -42,13 +42,14 @@ int cmd_cd(char **args)
     }
     if (chdir(args[1]) != 0) 
     {
-        erreur("Impossible de changer de répertoire");
+        erreur("Impossible de changer de repertoire");
     }
     return 1;
 }
 
-// Affiche le répertoire courant
-int cmd_pwd() {
+/* Affiche le repertoire courant */
+int cmd_pwd() 
+{
     char chemin[1024];
     if (getcwd(chemin, sizeof(chemin)) != NULL) 
     {
@@ -56,15 +57,17 @@ int cmd_pwd() {
     } 
     else 
     {
-        erreur("Impossible de récupérer le répertoire courant");
+        erreur("Impossible de recuperer le repertoire courant");
     }
     return 1;
 }
 
-// Affiche les arguments passés (support de variables plus tard)
+/* Affiche les arguments (support de variables plus tard) */
 int cmd_echo(char **args) 
 {
-    for (int i = 1; args[i]; i++) 
+    int i;
+
+    for (i = 1; args[i]; i++) 
     {
         printf("%s ", args[i]);
     }
@@ -72,9 +75,21 @@ int cmd_echo(char **args)
     return 1;
 }
 
-// Quitte le shell
+/* Quitte le shell */
 int cmd_exit() 
 {
-    printf("Fermeture du minishell INES Galilée. À bientôt !\n");
+    printf("Fermeture du minishell INES Galilee. A bientot !\n");
     exit(0);
+}
+
+/* Test pour l'instant temporaire */
+int gerer_variable(char *ligne) 
+{
+    return 0;
+}
+
+/* pareil, test pour l'instant temporaire */
+char* recuperer_variable(char *nom) 
+{
+    return NULL;
 }
