@@ -1,5 +1,4 @@
 # Compilateur
-
 CC = gcc
 
 # Flags de compilation

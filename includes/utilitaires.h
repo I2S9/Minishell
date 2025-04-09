@@ -13,5 +13,7 @@
 void nettoyer_ligne(char *ligne);
 void afficher_ascii_art();
 void afficher_prompt();
+void erreur(const char *msg);
+int ligne_est_vide(const char *ligne);
 
 #endif
