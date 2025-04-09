@@ -1,6 +1,6 @@
-# 🐚 Projet Minishell - INES Galilée
+# 🐚 Projet Minishell
 
-Bienvenue dans le **MiniShell INES Galilée**, un shell minimaliste conçu dans le cadre du cours de **systèmes d'exploitation**.
+Bienvenue dans le **MiniShell**, un shell minimaliste conçu dans le cadre du cours de **systèmes d'exploitation**.
 
 ## 📋 Objectif du projet
 
@@ -13,7 +13,16 @@ Créer un shell simple capable de :
 
 ## ⚙️ Structure du projet
 
- <pre> ``` minishell/ ├── includes/ │ ├── minishell.h │ └── utilitaires.h ├── src/ │ ├── minishell.c │ ├── builtins.c │ └── utilitaires.c ├── Makefile └── README.md ``` </pre> 
+minishell/
+├── includes/
+│   ├── minishell.h
+│   └── utilitaires.h
+├── src/
+│   ├── minishell.c
+│   ├── builtins.c
+│   └── utilitaires.c
+├── Makefile
+└── README.md
 
 ## 🛠️ Compilation
 
