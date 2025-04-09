@@ -83,13 +83,14 @@ int cmd_exit()
 }
 
 /* Test pour l'instant temporaire */
-int gerer_variable(char *ligne) 
-{
+int gerer_variable(char *ligne) {
+    (void)ligne; /* paramètre non utilisé pour le moment */
     return 0;
 }
 
 /* pareil, test pour l'instant temporaire */
 char* recuperer_variable(char *nom) 
 {
+    (void)nom; /* Test paramètre non utiliséé pour le moment */
     return NULL;
 }
