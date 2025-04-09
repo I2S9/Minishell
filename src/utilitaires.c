@@ -18,33 +18,43 @@ void nettoyer_ligne(char *ligne)
 void afficher_ascii_art() 
 {
     /* Icône coquillage (source : https://ascii.co.uk/art/seashell) */
-    printf("\033[38;5;217m");
-    printf("           _.---._\n");
-    printf("       .\"\".' /|\\ `.\"\".\n");
-    printf("      :  .' / | \\ `.  :\n");
-    printf("      '.'  /  |  \\  `.'\n");
-    printf("       `. /   |   \\ .'\n");
-    printf("         `-.__|__.-'\n");
-    printf("\033[0m");
+    printf("\033[38;5;217m"); /* Couleur rose pâle */
+
+    /* Ligne par ligne des 3 coquillages alignés */
+    printf("         /\\                        _.---._                       /\\\n");
+    printf("        {.-}                   .\"\".' /|\\ `.\"\".                  {.-}\n");
+    printf("       ;_.-'\\                 :  .' / | \\ `.  :                ;_.-'\\\n");
+    printf("      {    _.}_               '.'  /  |  \\  `.'               {    _.}_\n");
+    printf("       \\.-' /  `,              `. /   |   \\ .'                 \\.-' /  `,\n");
+    printf("        \\  |    /                `-.__|__.-'                    \\  |    /\n");
+    printf("         \\ |  ,/                                                 \\ |  ,/\n");
+    printf("          \\|_/                                                    \\|_/\n");
+
+    printf("\033[0m"); /* Reset couleurs */
+
 
     /* Titre MINISHELL en bleu cyan */
     printf("\033[1;36m");
     printf("\n");
-    printf("███╗   ███╗██╗███╗   ██╗██╗███████╗███████╗██╗  ██╗███████╗██╗     ██╗     \n");
-    printf("████╗ ████║██║████╗  ██║██║██╔════╝██╔════╝██║  ██║██╔════╝██║     ██║     \n");
-    printf("██╔████╔██║██║██╔██╗ ██║██║███████╗█████╗  ███████║█████╗  ██║     ██║     \n");
-    printf("██║╚██╔╝██║██║██║╚██╗██║██║╚════██║██╔══╝  ██╔══██║██╔══╝  ██║     ██║     \n");
-    printf("██║ ╚═╝ ██║██║██║ ╚████║██║███████║███████╗██║  ██║███████╗███████╗███████╗\n");
-    printf("╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝\n");
+    printf("        ███╗   ███╗██╗███╗   ██╗██╗███████╗██╗  ██╗███████╗██╗     ██╗     \n");
+    printf("        ████╗ ████║██║████╗  ██║██║██╔════╝██║  ██║██╔════╝██║     ██║     \n");
+    printf("        ██╔████╔██║██║██╔██╗ ██║██║███████╗███████║█████╗  ██║     ██║     \n");
+    printf("        ██║╚██╔╝██║██║██║╚██╗██║██║╚════██║██╔══██║██╔══╝  ██║     ██║     \n");
+    printf("        ██║ ╚═╝ ██║██║██║ ╚████║██║███████║██║  ██║███████╗███████╗███████╗\n");
+    printf("        ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝\n");
     printf("\033[0m");
 
     /* Encadrement informatif d'accueil du Minishell */
     printf("\033[1;34m");
-    printf("╔═════════════════════════════════════════════════════════════════════════════╗\n");
-    printf("║         Bienvenue dans le Minishell INES Galilee - Projet UNIX              ║\n");
-    printf("║       Tapez une commande pour commencer — utilisez 'exit' pour quitter      ║\n");
-    printf("╚═════════════════════════════════════════════════════════════════════════════╝\n");
+    printf("╔════════════════════════════════════════════════════════════════════════════════╗\n");
+    printf("║                                                                                ║\n");
+    printf("║             Bienvenue dans le Minishell INES Galilee – Projet UNIX             ║\n");
+    printf("║                                                                                ║\n");
+    printf("║         Tapez une commande pour commencer | utilisez 'exit' pour quitter       ║\n");
+    printf("║                                                                                ║\n");
+    printf("╚════════════════════════════════════════════════════════════════════════════════╝\n");
     printf("\033[0m\n");
+
 }
 
 /* Affiche un prompt colore avec repertoire courant */
