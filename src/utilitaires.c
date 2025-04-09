@@ -61,3 +61,23 @@ void afficher_prompt()
     printf("\033[0;36m~%s$\033[0m ", repertoire); 
     fflush(stdout);
 }
+
+// Affiche un message d'erreur en rouge
+void erreur(const char *msg) 
+{
+    fprintf(stderr, "\033[1;31mErreur : %s\033[0m\n", msg);
+}
+
+// Vérifie si la ligne est vide ou contient seulement des espaces
+int ligne_est_vide(const char *ligne) 
+{
+    while (*ligne) 
+    {
+        if (*ligne != ' ' && *ligne != '\t') 
+        {
+            return 0;
+        }
+        ligne++;
+    }
+    return 1;
+}
