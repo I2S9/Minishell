@@ -13,6 +13,7 @@ Créer un shell simple capable de :
 
 ## ⚙️ Structure du projet
 
+```
 minishell/
 ├── includes/
 │   ├── minishell.h
@@ -23,6 +24,7 @@ minishell/
 │   └── utilitaires.c
 ├── Makefile
 └── README.md
+```
 
 ## 🛠️ Compilation
 
