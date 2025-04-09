@@ -20,7 +20,7 @@ int cmd_cd(char **args);
 int cmd_pwd();
 int cmd_echo(char **args);
 int cmd_exit();
-int gerer_variable(char *ligne);
-char* recuperer_variable(char *nom);
+//int gerer_variable(char *ligne);
+//char* recuperer_variable(char *nom);
 
 #endif
