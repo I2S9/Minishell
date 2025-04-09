@@ -2,6 +2,8 @@
 
 Bienvenue dans le **MiniShell**, un shell minimaliste conçu dans le cadre du cours de **systèmes d'exploitation**.
 
+![image](https://github.com/user-attachments/assets/c28343ee-3c69-4e95-a460-ba0f416fe69f)
+
 ## 📋 Objectif du projet
 
 Créer un shell simple capable de :
